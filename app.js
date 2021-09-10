@@ -23,7 +23,8 @@ var options = {
   redirect: false
 }
 app.use(express.static('public', options))
-
+app.use('/ben', (req,res) => {
+  res.end(process.env.Fruit)})
 // #############################################################################
 // Catch all handler for all other request.
 app.use('*', (req,res) => {
